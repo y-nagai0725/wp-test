@@ -204,3 +204,9 @@ if ( ! function_exists( 'twentytwentyfour_pattern_categories' ) ) :
 endif;
 
 add_action( 'init', 'twentytwentyfour_pattern_categories' );
+
+function my_custom_scripts() {
+	wp_enqueue_script('custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '', true);
+}
+
+add_action('wp_enqueue_scripts', 'my_custom_scripts');
